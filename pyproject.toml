@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tenor-replay-engine-challenge"
+version = "0.1.0"
+description = "Candidate starter and evaluation contract for an autonomous agent replay engine"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "datasets==4.0.0",
+  "jsonschema>=4.23,<5",
+  "meta-agents-research-environments==1.2.0",
+]
+
+[project.scripts]
+replay-challenge = "replay_challenge.cli:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3,<9",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/replay_challenge"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+markers = [
+  "integration: requires network access and the public Gaia2 dataset",
+]

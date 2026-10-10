@@ -1,0 +1,79 @@
+{
+  "notice": "Illustrative shapes only. Angle-bracket values are placeholders, not accepted artifacts or learned policies.",
+  "run.json": {
+    "contract": "tenor-workflow-learning-v3",
+    "root_version": "<manifest root_version>",
+    "seeds": [7, 19, 41],
+    "iterations": [],
+    "final_version": "<last promoted version>",
+    "final_workflow": {"steps": []},
+    "initial_successes": 0,
+    "final_successes": 0,
+    "no_change": [],
+    "model_calls": [{"path": "model-calls/<call-id>", "stages": ["discovery", "proposal"]}]
+  },
+  "discovery/<index>.json": [
+    {
+      "rank": 1,
+      "scenario_id": "<scenario from input>",
+      "check": "<historical failed check>",
+      "feedback": "<recorded feedback, if any>",
+      "evidence": [{"trace_id": "<source trace>", "locator": "checks"}]
+    }
+  ],
+  "reconstruction/<scenario>.json": {
+    "<declared field>": {"value": null, "status": "unknown", "evidence": []}
+  },
+  "proposal.json": {
+    "workflow": {"steps": []},
+    "parent_version": "<active parent>",
+    "version": "<computed content address>",
+    "issue": "<copy selected issue object from discovery>",
+    "revision_evidence": []
+  },
+  "proposal-inputs.json": {
+    "issue": "<same selected issue object>",
+    "parent_workflow": "<complete active parent workflow>",
+    "training_corpus": ["<sanitized source history objects>"],
+    "historical_revision_evidence": []
+  },
+  "matrix.json": [
+    {
+      "scenario_id": "<scenario from input>",
+      "seed": 7,
+      "parent": "traces/<scenario>-7-parent.json",
+      "candidate": "traces/<scenario>-7-candidate.json"
+    }
+  ],
+  "decision.json": {
+    "version": "<computed proposed version>",
+    "decision": "<promote or reject from measurements>",
+    "improvements": [],
+    "regressions": [],
+    "revised_from": null,
+    "model_call": "model-calls/<call-id>"
+  },
+  "model-calls/<call-id>/response.json": {
+    "selected_issue": "<same issue object as proposal>",
+    "workflow": {"steps": []}
+  },
+  "model-calls/<call-id>/metadata.json": {
+    "provider": "<actual provider>", "model": "<actual model>", "status": "completed",
+    "usage": {"input_tokens": 0, "output_tokens": 0}, "cost_usd": 0,
+    "prompt_sha256": "<canonical JSON digest of prompt string>",
+    "response_sha256": "<canonical JSON digest of parsed response>"
+  },
+  "gate-input": {
+    "parent_version": "<active parent>",
+    "candidate_version": "<proposed version>",
+    "outcomes": [
+      {"scenario_id": "<scenario>", "seed": 7, "parent_success": true, "candidate_success": true}
+    ]
+  },
+  "gate-output": {
+    "decision": "<promote or reject>",
+    "active_version": "<candidate only on promotion, otherwise parent>",
+    "improvements": [],
+    "regressions": []
+  }
+}

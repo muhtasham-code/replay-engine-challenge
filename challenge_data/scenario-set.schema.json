@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://heytenor.com/challenges/replay-engine/scenario-set.schema.json",
+  "title": "Replay Engine Scenario Set",
+  "type": "object",
+  "required": ["contract", "scenarios"],
+  "properties": {
+    "contract": {"const": "tenor-ARE-core-v1"},
+    "scenario_dataset": {
+      "type": "object",
+      "required": ["repository", "revision", "split"],
+      "properties": {
+        "repository": {"type": "string"},
+        "revision": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+        "split": {"type": "string"}
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "path", "source_sha256"],
+        "properties": {
+          "id": {"type": "string"},
+          "path": {"type": "string"},
+          "config": {"type": "string"},
+          "role": {"type": "string"},
+          "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    }
+  }
+}
