@@ -26,6 +26,8 @@ Supported instructions:
 - `await`: `intent`; fast-forward to the next matching incoming reply or deadline. Reply fields bind as `reply.key`; clarified facts refresh. If no reply arrives, the runtime ends unresolved.
 - `finish`: `status`; write the owner report and end the run.
 
+Completion/report statuses for `finish` and `summary(status)` are `renewed` (a completed accepted renewal), `suppressed` (outreach withheld because the applicable restriction requires it), and `unresolved` (the job has not reached a successful resolution). The status must match the actual executed state, not merely the intended action. These are reporting labels, not instructions about which policy applies; infer the appropriate behavior from the supplied evidence. `finish` performs both `summary` and `complete`, so do not also emit a duplicate summary for the same completion.
+
 Arguments may use `{var: "variable.name"}`. Starting variables are the reconstructed field values. Predicates use `{field, op, value}` with `eq, ne, gt, ge, lt, le`, or nested `all`, `any`, `not`. Unknown numeric comparisons are false. Maximum 100 instructions and 500 tool/director events per replay.
 
 The baseline only binds the observed discount, creates an offer, sends it, awaits acceptance and reports. It contains no approval skill, suppression policy, commercial correction or exception-learning logic. Proposed workflows can change control flow, tool arguments, recipient/intent, waiting and completion behavior. You must generate those changes.

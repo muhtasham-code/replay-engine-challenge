@@ -61,4 +61,4 @@ See [workflow contract](docs/workflow-contract.md) and [artifact contract](docs/
 
 These are executed synthetic engineering tests, not production data, learned-director quality, live-model intelligence or commercial parity. [BASELINE.md](BASELINE.md) explains the evidence boundary.
 
-Submit a private GitHub repo, invite `muhtasham@heytenor.com`, and attach run artifacts, hours spent and your coding-agent transcript.
+Submit a private GitHub repo, invite `muhtasham@heytenor.com` and GitHub users `xmgad` and `luaiabuelsamen` with review access, and attach run artifacts, hours spent and your coding-agent transcript.

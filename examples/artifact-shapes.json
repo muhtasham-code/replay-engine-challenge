@@ -60,8 +60,8 @@
   "model-calls/<call-id>/metadata.json": {
     "provider": "<actual provider>", "model": "<actual model>", "status": "completed",
     "usage": {"input_tokens": 0, "output_tokens": 0}, "cost_usd": 0,
-    "prompt_sha256": "<canonical JSON digest of prompt string>",
-    "response_sha256": "<canonical JSON digest of parsed response>"
+    "prompt_sha256": "<64 lowercase hex characters: canonical JSON digest of prompt string, no prefix>",
+    "response_sha256": "<64 lowercase hex characters: canonical JSON digest of parsed response, no prefix>"
   },
   "gate-input": {
     "parent_version": "<active parent>",

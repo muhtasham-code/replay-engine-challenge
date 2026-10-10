@@ -112,7 +112,9 @@ Automated checks validate artifact structure, model-response linkage, selected f
 
 ## Submission
 
-Submit a private GitHub repository and invite `muhtasham@heytenor.com` with review access. Deliver:
+Artifact details: iteration folders use contiguous zero-based indices (`iterations/0`, `iterations/1`, ...), matching the order in `run.json`; discovery files use the corresponding index when a new issue is selected. Metadata hashes are 64-character lowercase hexadecimal canonical JSON SHA-256 digests without a `sha256:` prefix; workflow version identifiers include that prefix. Completion/report statuses are `renewed`, `suppressed` or `unresolved` and must truthfully reflect the executed outcome. See the artifact and workflow contracts for details; these formats do not prescribe a learned policy.
+
+Submit a private GitHub repository and invite `muhtasham@heytenor.com` and GitHub users `xmgad` and `luaiabuelsamen` with review access. Deliver:
 
 - Your implemented agentic learning system, with one command driving discovery through measured promotion without human-authored fixes between stages.
 - A demonstration of at least two distinct compounding improvements, and a separate deterministic promotion-safety report. Safe-first solutions need not manufacture a rejection.
